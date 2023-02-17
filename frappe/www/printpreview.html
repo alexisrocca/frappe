@@ -8,3 +8,11 @@ no_cache: 1
         .get_doc('Print Format', frappe.form_dict.print_format)
         .get_html(frappe.form_dict.name, frappe.form_dict.letterhead)
 }}
+
+<script>
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if (urlParams.get('trigger_print') == 1) {
+		window.print();
+	}
+</script>
